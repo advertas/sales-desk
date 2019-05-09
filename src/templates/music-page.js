@@ -2,6 +2,8 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
+import FetchRandomUser from '../components/FetchRandomUser'
+
 
 
 class TagRoute extends React.Component {
@@ -19,6 +21,7 @@ class TagRoute extends React.Component {
               <h1 className="has-text-weight-bold is-size-2">All Extended Packs</h1>
             </div>
             <br/>
+            <FetchRandomUser/>
             <div className="columns is-multiline">
             {posts.map(({ node: post }) => (
                 <div

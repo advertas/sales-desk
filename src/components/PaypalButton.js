@@ -70,7 +70,7 @@ class PaypalButton extends React.Component {
 
       // TODO: need to fix this line of code. Dev wont work without it
       // add a staging envrionment
-      // const paypal = window.PAYPAL
+      const paypal = window.PAYPAL
 
     const {
       total,
