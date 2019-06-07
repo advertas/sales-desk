@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import FetchRandomUser from '../components/FetchRandomUser'
+import FetchData from '../components/FetchData'
 
 
 
@@ -18,33 +18,10 @@ class TagRoute extends React.Component {
         <section className="section">
           <div className="container">
             <div className="content">
-              <h1 className="has-text-weight-bold is-size-2">All Extended Packs</h1>
+              <h1 className="has-text-weight-bold is-size-2">SALES DESK DASHBOARD</h1>
             </div>
             <br/>
-            <FetchRandomUser/>
-            <div className="columns is-multiline">
-            {posts.map(({ node: post }) => (
-                <div
-                  className="column is-one-third"
-                  style={{ border: '1px solid #eaecee', padding: '2em 4em' }}
-                  key={post.id}
-                >
-                  <p>
-                    <Link className="has-text-primary" to={post.fields.slug}>
-                      {post.frontmatter.title}
-                    </Link>
-                    <small>{post.frontmatter.date}</small>
-                  </p>
-                  <p>
-                    {post.excerpt}
-                    <Link to={post.fields.slug}>
-                    <img style={{'max-width':'150px'}}src={post.frontmatter.image}></img>
-                    </Link>
-                  </p>
-
-                </div>
-              ))}
-            </div>
+            <FetchData/>
           </div>
         </section>
       </Layout>
@@ -52,6 +29,30 @@ class TagRoute extends React.Component {
   }
 }
 
+
+// <div className="columns is-multiline">
+// {posts.map(({ node: post }) => (
+//     <div
+//       className="column is-one-third"
+//       style={{ border: '1px solid #eaecee', padding: '2em 4em' }}
+//       key={post.id}
+//     >
+//       <p>
+//         <Link className="has-text-primary" to={post.fields.slug}>
+//           {post.frontmatter.title}
+//         </Link>
+//         <small>{post.frontmatter.date}</small>
+//       </p>
+//       <p>
+//         {post.excerpt}
+//         <Link to={post.fields.slug}>
+//         <img style={{'max-width':'150px'}}src={post.frontmatter.image}></img>
+//         </Link>
+//       </p>
+//
+//     </div>
+//   ))}
+// </div>
 
 
 export default TagRoute
